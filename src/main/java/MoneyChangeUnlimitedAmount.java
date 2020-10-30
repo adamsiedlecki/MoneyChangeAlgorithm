@@ -1,8 +1,7 @@
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.List;
 
-public class MoneyChange1 {
+public class MoneyChangeUnlimitedAmount {
 
     private static final List<BigDecimal> coinsBanknotesDenominations = List.of(
             new BigDecimal("0.01"),
@@ -26,11 +25,11 @@ public class MoneyChange1 {
         String textChange = "127.99";
         BigDecimal change = new BigDecimal(textChange);
 
-        System.out.println("Giving change of: "+textChange);
+        System.out.println("Giving change of: " + textChange);
 
-        for (int i = coinsBanknotesDenominations.size()-1; i >=0 ; i--) {
-            while(change.compareTo(coinsBanknotesDenominations.get(i)) >= 0){
-                System.out.println("\t Change: "+coinsBanknotesDenominations.get(i));
+        for (int i = coinsBanknotesDenominations.size() - 1; i >= 0; i--) {
+            while (change.compareTo(coinsBanknotesDenominations.get(i)) >= 0) {
+                System.out.println("\t Change: " + coinsBanknotesDenominations.get(i));
                 change = change.subtract(coinsBanknotesDenominations.get(i));
             }
         }
